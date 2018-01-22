@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/dlg_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="학생정보"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/dlg_std_edit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="편집"/>
+        <Button
+            android:id="@+id/dlg_std_delete_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="삭제"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true">
+
+            <!-- 이름입력 -->
+            <LinearLayout
+                android:id="@+id/dlg_student_name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="이름"/>
+                <EditText
+                    android:id="@+id/dlg_add_edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="이름을 입력하세요!"
+                    android:maxLength="5"
+                    android:enabled="false"/>
+            </LinearLayout>
+
+            <!-- 학교입력 -->
+            <LinearLayout
+                android:id="@+id/dlg_student_school_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dlg_student_name_layout"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="학교"/>
+                <EditText
+                    android:id="@+id/dlg_add_edit_school"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="학교를 입력하세요!"
+                    android:maxLength="20"
+                    android:enabled="false"/>
+            </LinearLayout>
+
+            <!-- 학년입력 -->
+            <LinearLayout
+                android:id="@+id/dlg_student_year_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dlg_student_school_layout"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="학년"/>
+                <EditText
+                    android:id="@+id/dlg_add_edit_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="학년을 입력하세요!"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:enabled="false"/>
+            </LinearLayout>
+
+            <!-- 수강과목 -->
+            <LinearLayout
+                android:id="@+id/dlg_student_subject_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dlg_student_year_layout"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="수강과목"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="한국사"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="세계사"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="동아시아사"
+                            android:clickable="false"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="세계지리"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="한국지리"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="생활과윤리"
+                            android:clickable="false"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="윤리와사상"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="법과정치"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="경제"
+                            android:clickable="false"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="사문"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="물리"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="화학"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="생물"
+                            android:clickable="false"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="지구과학"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="영어"
+                            android:clickable="false"/>
+                        <CheckBox
+                            android:id="@+id/dlg_check_sub16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="수학"
+                            android:clickable="false"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 등록일 -->
+            <LinearLayout
+                android:id="@+id/dlg_student_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dlg_student_subject_layout"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="등록일자"/>
+                <EditText
+                    android:id="@+id/dlg_add_edit_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="등록일자를 입력하세요!"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:enabled="false"/>
+            </LinearLayout>
+
+            <!-- 학생연락처 -->
+            <LinearLayout
+                android:id="@+id/dlg_student_student_phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dlg_student_date_layout"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="학생 연락처"/>
+                <EditText
+                    android:id="@+id/dlg_add_edit_std_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="학생 연락처를 입력하세요!"
+                    android:inputType="phone"
+                    android:enabled="false"/>
+            </LinearLayout>
+
+            <!-- 부모연락처 -->
+            <LinearLayout
+                android:id="@+id/dlg_student_parent_phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dlg_student_student_phone_layout"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="부모 연락처"/>
+                <EditText
+                    android:id="@+id/dlg_add_edit_parent_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="부모 연락처를 입력하세요!"
+                    android:inputType="phone"
+                    android:enabled="false"/>
+            </LinearLayout>
+
+            <!-- 특이사항 -->
+            <LinearLayout
+                android:id="@+id/dlg_student_other_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dlg_student_parent_phone_layout"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="특이사항"/>
+                <EditText
+                    android:id="@+id/dlg_add_edit_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="특이사항을 입력하세요!"
+                    android:lines="5"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:enabled="false"/>
+            </LinearLayout>
+
+            <!-- btn  -->
+            <LinearLayout
+                android:id="@+id/dlg_student_btn_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dlg_student_other_layout"
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+                <Button
+                    android:id="@+id/dlg_btn_add_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="저장"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
